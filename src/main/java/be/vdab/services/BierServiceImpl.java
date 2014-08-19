@@ -18,12 +18,6 @@ public class BierServiceImpl implements BierService{
 	public BierServiceImpl(BierDAO bierDAO){
 		this.bierDAO = bierDAO;
 	}
-	
-	@Override
-	public List<Bier> findByBrouwerId(long id) {
-		return bierDAO.findByBrouwerId(id);
-	}
-
 
 	@Override
 	public List<Bier> findByIdIn(Iterable<Long> bierIds) {
