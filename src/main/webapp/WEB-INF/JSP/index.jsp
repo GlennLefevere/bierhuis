@@ -8,7 +8,7 @@
 </head>
 <body>
 <v:menu/>
-<h1>Welkom in het huis van de belgische bieren</h1>
+<h1>Welkom in het huis van de Belgische bieren</h1>
 <img src="${contextPath}/images/bierhuis.jpg"/>
 <p>We hebben momenteel ${aantal} bieren.</p>
 </body>

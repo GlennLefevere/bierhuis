@@ -1,6 +1,7 @@
 nav ul{
 	float: left;
 	clear: left;
+	padding: 0px;
 }
 
 nav ul li{
@@ -10,4 +11,28 @@ nav ul li{
 }
 h1{
 	clear: left;
+}
+dt{
+	font-weight: bold;
+}
+dd{
+	margin: 0px;
+}
+
+form>*{
+	float: left;
+	clear: left;
+}
+label{
+	font-weight: bold;
+}
+#number{
+	text-align: right;
+}
+.fout{
+	color: #FFF;
+	background-color: red;
+	font-weight: normal;
+	padding: 3px;
+	border-radius: 3px;
 }

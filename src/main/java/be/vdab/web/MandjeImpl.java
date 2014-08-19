@@ -23,5 +23,10 @@ public class MandjeImpl implements Mandje, Serializable{
 	public Map<Long, Integer> getMandje() {
 		return mandje;
 	}
+
+	@Override
+	public void clear() {
+		mandje.clear();
+	}
 	
 }

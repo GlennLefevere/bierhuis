@@ -26,6 +26,7 @@ import be.vdab.valueobjects.Bestelbonlijn;
 @RequestMapping("/winkelwagen")
 public class WinkelwagenControler {
 	private static final String WINKELWAGEN_VIEW = "/winkelwagen/winkelwagen";
+	private static final String BEVESTIGD_VIEW = "/winkelwagen/bevestigd";
 	private Mandje mandje;
 	private BierService bierService;
 	private BestelbonService bestelbonService;
@@ -63,9 +64,11 @@ public class WinkelwagenControler {
 
 	@RequestMapping(method = RequestMethod.POST, value = "/bestellen")
 	ModelAndView wegschrijven(@Valid Bestelbon bestelbon, BindingResult bindingResult) {
-		if (!bindingResult.hasErrors()) {
+		bestelbon.setBestelbonlijnen(vanMandjeNaarBestelbonlijnen());
+		if (!bindingResult.hasErrors() && bestelbon.getBestelbonlijnen().size() > 0) {
 			Bestelbon verstuurdeBestelbon = bestelbonService.create(bestelbon);
-			System.out.println(verstuurdeBestelbon.getId());
+			mandje.clear();
+			return new ModelAndView(BEVESTIGD_VIEW).addObject("id", verstuurdeBestelbon.getId());
 		}
 		return new ModelAndView(WINKELWAGEN_VIEW).addObject(bestelbon);
 	}

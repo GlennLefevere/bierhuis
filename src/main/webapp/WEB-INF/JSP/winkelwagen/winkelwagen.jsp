@@ -23,14 +23,14 @@
 	<c:forEach items="${bestelbon.bestelbonlijnen}" var="bestelbonlijn">
 		<tr>
 			<td>${bestelbonlijn.bier.naam}</td>
-			<td><fmt:formatNumber value="${bestelbonlijn.bier.prijs}"/></td>
-			<td>${bestelbonlijn.aantal}</td>
-			<td><fmt:formatNumber value="${bestelbonlijn.teBetalen}"/></td>
+			<td id="number"><fmt:formatNumber value="${bestelbonlijn.bier.prijs}"/></td>
+			<td id="number">${bestelbonlijn.aantal}</td>
+			<td id="number"><fmt:formatNumber value="${bestelbonlijn.teBetalen}"/></td>
 		</tr>
 	</c:forEach>
 </c:if>
 <tr>
-<td>Totaal: <fmt:formatNumber value="${bestelbon.totaal}"/> </td>
+<td id="number" colspan="4">Totaal: <fmt:formatNumber value="${bestelbon.totaal}"/> </td>
 </tr>
 </table>
 <spring:url value="/winkelwagen/bestellen" var="bestellenURL"/>
