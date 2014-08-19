@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import be.vdab.entities.Brouwer;
-import be.vdab.services.BierService;
 import be.vdab.services.BrouwerService;
 
 @Controller
@@ -18,12 +17,10 @@ public class BrouwersControler {
 	private static final String BROUWERS_VIEW = "/brouwers/brouwers";
 	private static final String BROUWER_VIEW = "/brouwers/brouwer";
 	private BrouwerService brouwerService;
-	private BierService bierService;
 
 	@Autowired
-	public BrouwersControler(BrouwerService brouwerService, BierService bierService) {
+	public BrouwersControler(BrouwerService brouwerService) {
 		this.brouwerService = brouwerService;
-		this.bierService = bierService;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
