@@ -19,16 +19,14 @@ public class BierControler {
 	private static final String BIER_VIEW = "/bier/bier";
 	private final static String REDIRECT_NA_TOEVOEGEN = "redirect:/winkelwagen";
 	private Mandje mandje;
-	private BierService bierService;
 	@Autowired
-	public BierControler(Mandje mandje, BierService bierService) {
+	public BierControler(Mandje mandje) {
 		this.mandje = mandje;
-		this.bierService = bierService;
 	}
 	
-	@RequestMapping(value = "{id}")
-	ModelAndView findBier(@PathVariable Long id){
-		return new ModelAndView(BIER_VIEW).addObject(bierService.findBier(id)).addObject(new BierForm());
+	@RequestMapping(value = "{bier}")
+	ModelAndView findBier(@PathVariable Bier bier){
+		return new ModelAndView(BIER_VIEW).addObject(bier).addObject(new BierForm());
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="{bier}/toevoegen", params= {"aantal"})

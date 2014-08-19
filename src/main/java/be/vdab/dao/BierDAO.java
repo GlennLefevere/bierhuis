@@ -10,6 +10,4 @@ import be.vdab.entities.Bier;
 public interface BierDAO extends JpaRepository<Bier, Long>{
 	public long count();
 	public List<Bier> findByBrouwerId(long id);
-	public List<Bier> findByIdIn(List<Long> bierIds);
-	public Bier findBier(@Param("id") long id);
 }

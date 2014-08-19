@@ -5,7 +5,6 @@
 		<class>be.vdab.entities.Bier</class>
 		<class>be.vdab.entities.Bestelbon</class>
 		<class>be.vdab.valueobjects.Bestelbonlijn</class>
-		<class>be.vdab.valueobjects.BestelbonIdEnBierId</class>
 		<class>be.vdab.entities.Soort</class>
 	</persistence-unit>
 </persistence>

@@ -19,13 +19,6 @@ public class BierServiceImpl implements BierService{
 		this.bierDAO = bierDAO;
 	}
 	
-	
-	@Override
-	public long count() {
-		return bierDAO.count();
-	}
-
-
 	@Override
 	public List<Bier> findByBrouwerId(long id) {
 		return bierDAO.findByBrouwerId(id);
@@ -33,14 +26,13 @@ public class BierServiceImpl implements BierService{
 
 
 	@Override
-	public List<Bier> findByIdIn(List<Long> bierIds) {
-		return bierDAO.findByIdIn(bierIds);
+	public List<Bier> findByIdIn(Iterable<Long> bierIds) {
+		return bierDAO.findAll(bierIds);
 	}
 
-
 	@Override
-	public Bier findBier(long id) {
-		return bierDAO.findBier(id);
+	public long count() {
+		return bierDAO.count();
 	}
 
 }

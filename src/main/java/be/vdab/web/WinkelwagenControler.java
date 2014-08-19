@@ -1,10 +1,8 @@
 package be.vdab.web;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.validation.Valid;
@@ -47,17 +45,12 @@ public class WinkelwagenControler {
 
 	private Set<Bestelbonlijn> vanMandjeNaarBestelbonlijnen() {
 		Set<Bestelbonlijn> mand = new HashSet<>();
-		List<Long> bierenIds = new ArrayList<Long>();
-		List<Bier> bieren = new ArrayList<>();
 		Map<Long, Integer> mandjes = mandje.getMandje();
-		for (Entry<Long, Integer> entry : mandjes.entrySet()) {
-			bierenIds.add(entry.getKey());
-		}
-		if (!bierenIds.isEmpty()) {
-			bieren = bierService.findByIdIn(bierenIds);
-		}
-		for (Bier bier : bieren) {
-			mand.add(new Bestelbonlijn(bier, mandjes.get(bier.getId())));
+		if (!mandjes.isEmpty()) {
+			List<Bier> bieren = bierService.findByIdIn(mandjes.keySet());
+			for (Bier bier : bieren) {
+				mand.add(new Bestelbonlijn(bier, mandjes.get(bier.getId())));
+			}
 		}
 		return mand;
 	}

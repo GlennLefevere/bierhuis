@@ -12,7 +12,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import be.vdab.entities.Bier;
-import be.vdab.valueobjects.BestelbonIdEnBierId;
+import be.vdab.valueobjects.Bestelbonlijn;
 
 @Configuration
 @ComponentScan(basePackageClasses = CreateDAOBeans.class)
@@ -25,7 +25,7 @@ public class CreateDAOBeans {
 	LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setDataSource(dataSource);
-		factory.setPackagesToScan(Bier.class.getPackage().getName(), BestelbonIdEnBierId.class.getPackage().getName());
+		factory.setPackagesToScan(Bier.class.getPackage().getName(), Bestelbonlijn.class.getPackage().getName());
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		adapter.setShowSql(true);
 		factory.setJpaVendorAdapter(adapter);

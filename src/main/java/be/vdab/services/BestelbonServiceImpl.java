@@ -18,6 +18,7 @@ public class BestelbonServiceImpl implements BestelbonService {
 	}
 
 	@Override
+	@Transactional(readOnly = false)
 	public Bestelbon create(Bestelbon bestelbon) {
 		return bestelbonDAO.save(bestelbon);
 	}

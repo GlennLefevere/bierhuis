@@ -12,7 +12,7 @@ import be.vdab.services.BierService;
 @RequestMapping("/")
 class IndexController {
 	private static final String VIEW = "/index";
-	private BierService bierService;
+	private final BierService bierService;
 	
 	@Autowired
 	public IndexController(BierService bierService){
