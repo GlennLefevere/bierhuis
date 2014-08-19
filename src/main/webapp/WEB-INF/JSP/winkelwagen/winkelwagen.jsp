@@ -37,13 +37,13 @@
 <form:form commandName="bestelbon" action="${bestellenURL}" method="post">
 	<form:label path="naam">Naam <form:errors path="naam" cssClass="fout"/></form:label>
 	<form:input path="naam"/>
-	<form:label path="straat">straat <form:errors path="straat" cssClass="fout"/></form:label>
+	<form:label path="straat">Straat <form:errors path="straat" cssClass="fout"/></form:label>
 	<form:input path="straat"/>
-	<form:label path="huisNr">huisnummer <form:errors path="huisNr" cssClass="fout"/></form:label>
+	<form:label path="huisNr">Huisnummer <form:errors path="huisNr" cssClass="fout"/></form:label>
 	<form:input path="huisNr"/>
-	<form:label path="postcode">postcode <form:errors path="postcode" cssClass="fout"/></form:label>
+	<form:label path="postcode">Postcode <form:errors path="postcode" cssClass="fout"/></form:label>
 	<form:input path="postcode" type="number"/>
-	<form:label path="gemeente">gemeente <form:errors path="gemeente" cssClass="fout"/></form:label>
+	<form:label path="gemeente">Gemeente <form:errors path="gemeente" cssClass="fout"/></form:label>
 	<form:input path="gemeente"/>
 	<input type="submit" value="Als bestelbon bevestigen"/>
 </form:form>
