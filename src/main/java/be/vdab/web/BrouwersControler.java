@@ -30,6 +30,6 @@ public class BrouwersControler {
 	
 	@RequestMapping(value = "{brouwer}")
 	ModelAndView bierenVanBrouwer(@PathVariable Brouwer brouwer){
-		return new ModelAndView(BROUWER_VIEW).addObject(brouwer).addObject("bieren", brouwer.getBieren());
+		return new ModelAndView(BROUWER_VIEW).addObject(brouwer);
 	}
 }

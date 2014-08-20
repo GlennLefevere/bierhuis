@@ -25,7 +25,7 @@ public class BierControler {
 	
 	@RequestMapping(value = "{bier}")
 	ModelAndView findBier(@PathVariable Bier bier){
-		return new ModelAndView(BIER_VIEW).addObject(bier).addObject(new BierForm());
+		return new ModelAndView(BIER_VIEW).addObject(new BierForm());
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="{bier}/toevoegen", params= {"aantal"})
@@ -34,7 +34,7 @@ public class BierControler {
 			mandje.addItem(bier.getId(), bierForm.getAantal());
 			return new ModelAndView(REDIRECT_NA_TOEVOEGEN);
 		}
-		return new ModelAndView(BIER_VIEW).addObject(bier);
+		return new ModelAndView(BIER_VIEW);
 	}
 
 }

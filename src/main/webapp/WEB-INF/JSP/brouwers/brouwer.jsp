@@ -12,7 +12,7 @@
 <v:menu/>
 <h1>${brouwer.naam} (${brouwer.gemeente})</h1>
 <ul>
-<c:forEach items="${bieren}" var="bier">
+<c:forEach items="${brouwer.bieren}" var="bier">
 	<spring:url value="/bier/{id}" var="bierURL">
 		<spring:param name="id" value="${bier.id}"/>
 	</spring:url>
